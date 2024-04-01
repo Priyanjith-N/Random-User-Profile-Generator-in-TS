@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random User Profile Generator</title>
+    <link rel="shortcut icon" href="./src/typescript.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="w-[100%] h-screen">
+      <div class="h-[25%] bg-blue-950 relative">
+        <img class="border-[1px] bg-black w-36 h-36 absolute bottom-0 left-[50%] translate-x-[-50%] rounded-full object-contain object-center z-50" src="" id="avatar" alt="">
+      </div>
+      <div class="shadow-xl w-[90%] bg-[#242424] m-auto my-0 rounded-[25px] translate-y-[-16%]">
+        <div class="py-[7rem] text-center">
+          <h1 class="capitalize text-2xl font-bold mb-2 tracking-wider" id="username"></h1>
+          <p class="text-base font-normal mb-1" id="email"></p>
+          <p class="text-base font-normal mb-1">User ID : <span id="uid"></span></p>
+          <p class="text-base font-normal mb-1">Gender : <span id="gender"></span></p>
+          <p class="text-base font-normal mb-2">Date of Birth : <span id="DOB"></span></p>
+          <h2 class="capitalize text-xl font-bold mb-2 tracking-wider">Employment</h2>
+          <p class="text-base font-normal mb-1">AS <span id="title"></span></p>
+          <p class="text-base font-normal mb-1">Key Skill : <span id="keySkill"></span></p>
+        </div>
+      </div>
+      <div class="px-[5%]">
+        <button class="bg-blue-950 outline-none" id="Generate">Generate Another</button>
+      </div>
+    </div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
