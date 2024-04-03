@@ -29,8 +29,12 @@ export default class UserProfile implements DOMProfile {
     }
 
     async getData(): Promise<void>{
-        const response: UserProfileData = (await axios.get('https://random-data-api.com/api/v2/users')).data;
-        this.render(response);
+        try {
+            const response: UserProfileData = (await axios.get('https://random-data-api.com/api/v2/users')).data;
+            this.render(response);
+        } catch (err: any) {
+            throw err;
+        }
     }
 
     private render(data: UserProfileData): void {

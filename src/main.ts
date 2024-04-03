@@ -6,9 +6,16 @@ const initAPP = async(): Promise<void> => {
   const generateBtn = document.getElementById('Generate') as HTMLButtonElement;
 
   generateBtn.addEventListener('click', async (): Promise<void> => {
-    generateBtn.textContent = 'Processing...'
-    await UserProfile.getData();
-    generateBtn.textContent = 'Generate Another'
+    try {
+      generateBtn.textContent = 'Processing...'
+      await UserProfile.getData();
+      generateBtn.textContent = 'Generate Another'
+    } catch (err: any) {
+      console.error(err.message);
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
+    }
   });
 
   await UserProfile.getData();
